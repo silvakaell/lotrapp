@@ -1,4 +1,5 @@
 import requests
+import random
 
 API_KEY = "EpJZYL8_QwFZ05RCFL_j"
 
@@ -21,5 +22,9 @@ for char in characters:
 # Com o ID, chamo a api para retornar os quotes
 quote_response = requests.get(f"https://the-one-api.dev/v2/character/{id}/quote", headers=headers)
 quotes_list = quote_response.json()["docs"]
+quotes_select_list = []
 for quotes in quotes_list:
-    print(quotes["dialog"])
+    quotes_select_list.append(quotes["dialog"])
+
+# Seleciona aleatoriamente um quote do personagem.
+print(f"{name}: {random.choice(quotes_select_list)}")
