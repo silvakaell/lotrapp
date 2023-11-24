@@ -27,3 +27,5 @@ for quotes in quotes_list:
 
 # Seleciona aleatoriamente um quote do personagem #
 print(f"{name}: {random.choice(quotes_select_list)}")
+
+#próximos passos: usar GUI
